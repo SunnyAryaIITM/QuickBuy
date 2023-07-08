@@ -19,12 +19,14 @@ def create_app():
         app.config.from_object(LocalDevelopmentConfig)
     db.init_app(app)
     with app.app_context():
+        # db.drop_all()
         db.create_all()
     app.register_blueprint(App)
     app.logger.info("App setup complete")
     return app
 
 app = create_app()
+app.secret_key="sunny@quick"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port = 5000)

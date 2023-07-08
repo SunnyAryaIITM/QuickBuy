@@ -6,3 +6,6 @@ class User(db.Model):
     username = db.Column(db.String, unique=True)
     email = db.Column(db.String, unique=True)
     password = db.Column(db.String)
+    phone_number = db.Column(db.String)
+    fullname = db.Column(db.String)
+    isAdmin = db.Column(db.Boolean)
